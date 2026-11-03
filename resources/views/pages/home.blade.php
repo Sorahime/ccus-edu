@@ -998,7 +998,7 @@
         <div class="footer-column">
             <strong>Lainnya</strong>
             <a href="#uji">Uji Pemahaman</a>
-            <a href="#tentang">Tentang Program</a>
+            <a href="{{ route('about') }}">Tentang Kami</a>
             <a href="mailto:ccusedu@universitaspertamina.ac.id">
                 Kontak &amp; Aspirasi
             </a>

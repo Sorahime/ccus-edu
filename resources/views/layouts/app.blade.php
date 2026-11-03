@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="id">
 
 <head>
 
@@ -14,6 +14,16 @@
         content="CCUS Edu - Explore, Learn, Discover. Platform edukasi Carbon Capture, Utilization, and Storage.">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <script>
+        const savedTheme = localStorage.getItem('ccus-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        document.documentElement.dataset.theme =
+            savedTheme === 'dark' || savedTheme === 'light'
+                ? savedTheme
+                : systemPrefersDark ? 'dark' : 'light';
+    </script>
 
     <title>
         @yield('title', 'CCUS Edu — Explore, Learn, Discover')

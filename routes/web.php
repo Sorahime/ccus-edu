@@ -1,11 +1,14 @@
 
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearnController;
+use Illuminate\Support\Facades\Route;
 
 // HOMEPAGE
 Route::view('/', 'pages.home')->name('home');
+
+// ABOUT
+Route::view('/tentang-kami', 'pages.about')->name('about');
 
 // LEARNING CENTER
 Route::redirect('/belajar-ccs', '/belajar-ccus', 301);

@@ -17,20 +17,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========================================
 
     const savedTheme = localStorage.getItem('ccus-theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    let hasSavedTheme = savedTheme === 'dark' || savedTheme === 'light';
 
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-        root.dataset.theme = savedTheme;
+    function applyTheme(theme) {
+        root.dataset.theme = theme;
+        themeButton?.setAttribute('aria-pressed', String(theme === 'dark'));
+        themeButton?.setAttribute(
+            'aria-label',
+            theme === 'dark' ? 'Ganti ke tema terang' : 'Ganti ke tema gelap'
+        );
+        document.querySelector('meta[name="theme-color"]')?.setAttribute(
+            'content',
+            theme === 'dark' ? '#102b25' : '#f4fbf8'
+        );
     }
 
-    themeButton?.addEventListener('click', () => {
+    applyTheme(
+        hasSavedTheme
+            ? savedTheme
+            : systemTheme.matches ? 'dark' : 'light'
+    );
 
+    systemTheme.addEventListener('change', event => {
+        if (!hasSavedTheme) {
+            applyTheme(event.matches ? 'dark' : 'light');
+        }
+    });
+
+    themeButton?.addEventListener('click', () => {
         const nextTheme =
             root.dataset.theme === 'dark' ? 'light' : 'dark';
 
-        root.dataset.theme = nextTheme;
-
+        applyTheme(nextTheme);
         localStorage.setItem('ccus-theme', nextTheme);
-
+        hasSavedTheme = true;
     });
 
 
