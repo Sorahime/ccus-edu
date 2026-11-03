@@ -989,7 +989,7 @@
 
         <div class="footer-column">
             <strong>Jelajahi</strong>
-            <a href="#belajar">Belajar CCS</a>
+            <a href="#belajar">Belajar CCUS</a>
             <a href="#materi">Materi &amp; Modul</a>
             <a href="#game">Game &amp; Kuis</a>
         </div>

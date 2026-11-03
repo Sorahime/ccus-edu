@@ -8,7 +8,13 @@ use App\Http\Controllers\LearnController;
 Route::view('/', 'pages.home')->name('home');
 
 // LEARNING CENTER
-Route::prefix('belajar-ccs')
+Route::redirect('/belajar-ccs', '/belajar-ccus', 301);
+
+Route::get('/belajar-ccs/{slug}', fn (string $slug) => redirect()
+    ->route('learn.show', $slug, 301))
+    ->where('slug', '[a-z0-9-]+');
+
+Route::prefix('belajar-ccus')
     ->name('learn.')
     ->controller(LearnController::class)
     ->group(function () {

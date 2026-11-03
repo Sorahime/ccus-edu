@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const themeButton = document.querySelector('[data-theme-toggle]');
     const menuButton = document.querySelector('[data-menu-toggle]');
-    const navLinks = document.querySelector('[data-nav-links');
+    const navLinks = document.querySelector('[data-nav-links]');
 
 
     // ========================================

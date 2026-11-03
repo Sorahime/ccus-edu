@@ -50,7 +50,7 @@
                 class="nav-link {{ request()->routeIs('learn.*') ? 'active' : '' }}"
                 href="{{ route('learn.index') }}"
             >
-                Belajar CCS
+                Belajar CCUS
             </a>
 
             <a class="nav-link" href="{{ route('home') }}#materi">

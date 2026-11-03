@@ -13,7 +13,7 @@
             <div class="learn-hero-copy">
 
                 <span class="section-kicker green-kicker">
-                    BELAJAR CCS
+                    BELAJAR CCUS
                 </span>
 
                 <h1>
@@ -40,14 +40,10 @@
                 <div class="learn-decoration decoration-one">✦</div>
                 <div class="learn-decoration decoration-two">✦</div>
 
-                <div class="learn-hero-mascot">
-
-                    <img
-                        src="{{ asset('build/assets/mascot/coco-studying.png') }}"
-                        alt="Coco sedang belajar CCUS"
-                    >
-
-                </div>
+                <img
+                    src="{{ asset('images/coco-studying.svg') }}"
+                    alt="Coco sedang belajar CCUS"
+                >
 
                 <div class="mascot-caption">
                     <span>👋</span>
@@ -63,38 +59,6 @@
 
     {{-- MAIN CONTENT --}}
     <section class="container learn-content">
-
-        {{-- PROGRESS SUMMARY --}}
-        <div class="learning-summary">
-
-            <div class="summary-heading">
-                <div>
-                    <span class="section-kicker">YOUR LEARNING JOURNEY</span>
-                    <h2>Perjalanan Belajarmu</h2>
-                </div>
-
-                <div class="summary-percentage">
-                    {{ $overallProgress }}%
-                </div>
-            </div>
-
-            <div class="summary-progress-track">
-                <div
-                    class="summary-progress-fill"
-                    style="width: {{ $overallProgress }}%"
-                ></div>
-            </div>
-
-            <div class="summary-footer">
-                <span>{{ $completedTotal }} dari {{ $totalSlides }} slide selesai</span>
-                <span>
-                    {{ collect($materials)->where('is_completed', true)->count() }}
-                    dari 6 materi selesai
-                </span>
-            </div>
-
-        </div>
-
 
         {{-- LOCKED MESSAGE --}}
         @if(session('locked_message'))
@@ -143,19 +107,19 @@
 
                     <div>
                         <span class="section-kicker green-kicker">
-                            LEARNING MODULES
+                            DAFTAR MATERI
                         </span>
 
-                        <h2>Mulai Perjalananmu</h2>
+                        <h2>Materi Belajar CCUS</h2>
 
                         <p>
-                            Selesaikan setiap materi untuk membuka
+                            Selesaikan materi secara berurutan untuk membuka
                             pembelajaran berikutnya.
                         </p>
                     </div>
 
                     <span class="material-count">
-                        06 MODULES
+                        {{ str_pad(count($materials), 2, '0', STR_PAD_LEFT) }} MATERI
                     </span>
 
                 </div>

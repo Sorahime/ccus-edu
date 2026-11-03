@@ -18,7 +18,7 @@
     {{-- BREADCRUMB --}}
     <div class="container lesson-breadcrumb">
 
-        <a href="{{ route('learn.index') }}">Belajar CCS</a>
+        <a href="{{ route('learn.index') }}">Belajar CCUS</a>
 
         <span>›</span>
 
