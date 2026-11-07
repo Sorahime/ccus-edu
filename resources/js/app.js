@@ -3,6 +3,8 @@
 // CCUS EDU - GLOBAL NAVIGATION
 // ========================================
 
+import './quiz.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const root = document.documentElement;

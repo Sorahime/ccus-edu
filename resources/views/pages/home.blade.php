@@ -401,13 +401,13 @@
                     seputar CCUS.
                 </p>
 
-                <a class="button button-primary button-small" href="#uji">
+                <a class="button button-primary button-small" href="{{ route('quiz.index') }}">
                     Main Sekarang <span>→</span>
                 </a>
 
             </div>
 
-            <a class="game-preview" href="#uji" aria-label="Lihat game CO2 Journey">
+            <a class="game-preview" href="{{ route('quiz.index') }}" aria-label="Lihat game CO2 Journey">
 
                 <div class="game-preview-title">
                     CO₂ Journey:<br>
@@ -780,7 +780,7 @@
             </a>
 
 
-            <a class="learning-card" href="#uji">
+            <a class="learning-card" href="{{ route('quiz.index') }}">
 
                 <span class="learning-card-icon icon-quiz">✓</span>
 
@@ -997,7 +997,7 @@
 
         <div class="footer-column">
             <strong>Lainnya</strong>
-            <a href="#uji">Uji Pemahaman</a>
+            <a href="{{ route('quiz.index') }}">Uji Pemahaman</a>
             <a href="{{ route('about') }}">Tentang Kami</a>
             <a href="mailto:ccusedu@universitaspertamina.ac.id">
                 Kontak &amp; Aspirasi

@@ -10,6 +10,9 @@ Route::view('/', 'pages.home')->name('home');
 // ABOUT
 Route::view('/tentang-kami', 'pages.about')->name('about');
 
+// QUIZ
+Route::view('/uji-pemahaman', 'pages.quiz')->name('quiz.index');
+
 // LEARNING CENTER
 Route::redirect('/belajar-ccs', '/belajar-ccus', 301);
 

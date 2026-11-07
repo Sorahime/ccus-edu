@@ -65,7 +65,10 @@
                 Game &amp; Kuis
             </a>
 
-            <a class="nav-link" href="{{ route('home') }}#uji">
+            <a
+                class="nav-link {{ request()->routeIs('quiz.*') ? 'active' : '' }}"
+                href="{{ route('quiz.index') }}"
+            >
                 Uji Pemahaman
             </a>
 
